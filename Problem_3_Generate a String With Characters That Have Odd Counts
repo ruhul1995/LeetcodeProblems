@@ -1,0 +1,31 @@
+class Solution 
+{
+    public String generateTheString(int n) 
+    {
+        //variable declaration
+        String ch ="r";
+        String str = "", str2 = "l";
+        int start, end;
+        
+        //Logic
+        
+        //if no is odd
+        if( n % 2 != 0)
+        {
+            for(start = 1 ; start <= n ; start++)
+            {
+                str += ch;
+            }
+        }
+        else //no is even
+        {
+            //letter should be n-1 times occuring in string
+            for(end = 1 ; end <= n-1 ; end++)
+            {
+                str += ch;
+            }
+            str +=str2;
+        }
+        return str;
+    }
+}
