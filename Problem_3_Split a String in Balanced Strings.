@@ -1,0 +1,30 @@
+class Solution 
+{
+    public int balancedStringSplit(String s) 
+    {
+        //Variable Declaration
+        int RCount= -1, LCount = -1, TotalSet = 0;
+        char mR= 'R', mL='L';
+        
+        //converting string into character array
+        char ch[] = s.toCharArray();
+        int len = ch.length;
+        
+        //logic : calculating no of R and L's one by one and checking for count
+        for(int i = 0; i< len; i++)
+        {    
+            if( ch[i] == mR )
+                RCount = RCount + 1;
+            else 
+                LCount = LCount + 1;
+                
+            if(RCount == LCount)
+            {
+                TotalSet++;
+                RCount = 0;
+                LCount = 0;
+            }        
+        }
+        return TotalSet;
+    }
+}
