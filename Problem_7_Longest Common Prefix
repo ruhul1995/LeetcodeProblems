@@ -1,0 +1,17 @@
+class Solution {
+    fun longestCommonPrefix(strs: Array<String>): String {
+        
+        if(strs.size == 0)
+            return ""
+        var resultantString = strs[0]
+        
+        for(start in 1..strs.size-1)
+        {
+            while(strs[start].indexOf(resultantString) != 0)
+            {
+                resultantString = resultantString.substring(0, resultantString.length-1)
+            }
+        }
+        return resultantString
+    }
+}
