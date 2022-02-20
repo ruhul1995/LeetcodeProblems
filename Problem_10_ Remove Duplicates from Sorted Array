@@ -1,0 +1,21 @@
+class Solution {
+    
+
+    fun removeDuplicates(nums: IntArray): Int {
+        var count = 0
+        var len = nums.size
+        
+        if(len == 0 || len == 1)
+            return len
+        
+        var j = 0;
+      
+        for (i in 0 until len-1)
+            if (nums[i] != nums[i+1])
+                nums[j++] = nums[i];
+      
+        nums[j++] = nums[len-1];
+      
+        return j;
+    }
+}
