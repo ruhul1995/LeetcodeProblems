@@ -1,0 +1,26 @@
+class Solution {
+    fun isValid(s: String): Boolean {
+        
+        if( s.length % 2 != 0)
+            return false
+        
+        var stack :Stack<Char> = Stack()
+        var ch = s.toCharArray()
+        for(i in 0 until ch.size )
+        {
+            if(ch[i] == '(')
+                stack.push(')')
+            else if(ch[i] == '[')
+                stack.push(']')
+            else if(ch[i] == '{')
+                stack.push('}')
+            else if(stack.isEmpty() || stack.pop() != ch[i])    
+                return false
+        }
+        
+        //println("size of stack = " + stackObj.size)
+        
+        return (stack.isEmpty())
+    
+    }
+}  
