@@ -1,0 +1,29 @@
+class Solution 
+{
+    fun twoSum(nums: IntArray, target: Int): IntArray 
+    {
+        var found = false 
+        val numsLength : Int = nums.size
+        val ansArray = IntArray(2)
+        
+        for( i in 0 until numsLength)
+        {
+            for( j in (i+1) until numsLength)
+            {
+                if( nums[i] + nums[j] == target)
+                {
+                    found = true;
+                    ansArray[0] = i;
+                    ansArray[1] = j;
+                    break;
+                }
+            }
+            if(found == true)
+            {
+                break;
+            }
+        }
+        
+        return ansArray;
+    }
+}
